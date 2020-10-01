@@ -1,0 +1,20 @@
+{
+  "name": "simplecybersecurity",
+  "version": "1.0.0",
+  "description": "A simple app so that anybody can learn basics of web-cybersecurity.",
+  "main": "app.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VedantBang/simplecybersecurity.git"
+  },
+  "author": "VedantBang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VedantBang/simplecybersecurity/issues"
+  },
+  "homepage": "https://github.com/VedantBang/simplecybersecurity#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
