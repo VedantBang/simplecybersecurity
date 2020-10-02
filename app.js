@@ -7,7 +7,7 @@ app.get('/level1', (req,res,next) => {
 	try{
 		let { admin } = req.cookies;
 		if(!admin) {
-			res.cookie('admin', 'superSecretAdmin').send('You are not authorised');
+			res.cookie('admin', 'wu2su2ee323283ye').send('You are not the superSecretAdmin that we want...');
 		} else {
 			if (admin === 'superSecretAdmin') {
 			res.status(200).send('Congratulations!');
