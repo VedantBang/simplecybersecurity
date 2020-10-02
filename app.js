@@ -10,12 +10,24 @@ app.get('/level1', (req,res,next) => {
 			res.cookie('admin', 'wu2su2ee323283ye').send('You are not the superSecretAdmin that we want...');
 		} else {
 			if (admin === 'superSecretAdmin') {
-			res.status(200).send('Congratulations!');
+			res.status(200).send('Congratulations! You can move on to level2 now...');
 			} else {
 			res.send('You are not authorised');
 			}
 		}
 	} catch(err){ next(err); }
+});
+
+app.get('/level2', (req, res, next) => {
+	try {
+		const userAgent = req.header('User-Agent');
+		const regex = /atc\/.* watchOS\/.* model\/Watch.*,.* hwp\/.* build\/.* .*/g;
+		if(regex.test(userAgent)) {
+			res.status(200).send('Yay you passed, you are an Apple watch owner! Move on to level3...')
+		} else {
+			res.send('You are not an apple watch user :(');
+		}
+	} catch (err) { next(err); }
 });
 
 app.use((err,req,res,next) => {
