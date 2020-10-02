@@ -1,9 +1,20 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
+app.use(cookieParser());
 
 app.get('/level1', (req,res,next) => {
 	try{
-		res.status(200).end("Welcome to level 1!");
+		let { admin } = req.cookies;
+		if(!admin) {
+			res.cookie('admin', 'wu2su2ee323283ye').send('You are not the superSecretAdmin that we want...');
+		} else {
+			if (admin === 'superSecretAdmin') {
+			res.status(200).send('Congratulations!');
+			} else {
+			res.send('You are not authorised');
+			}
+		}
 	} catch(err){ next(err); }
 });
 
