@@ -30,6 +30,25 @@ app.get('/level2', (req, res, next) => {
 	} catch (err) { next(err); }
 });
 
+app.get('/level3',(req,res,next)=>{
+	var data = req.query
+	try{
+		var s = req.query.apikey
+		if(s==undefined){
+			res.send('No that\'s the wrong apikey')
+		}
+		else if(s!="0112358132134"){
+			res.send("Your api key doesn't match our Fibonacci 10 standard")
+		}
+		else{
+			res.send('Congrats! You made your way to level 4')
+		}
+	}
+	catch(e){
+		res.send('No that\'s the wrong apikey')
+	}
+})
+
 app.use((err,req,res,next) => {
 	console.log(err);
 	res.status(200).end('Looks like something broke... let\'s try again!');
