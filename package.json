@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A simple app so that anybody can learn basics of web-cybersecurity.",
   "main": "app.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node app.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VedantBang/simplecybersecurity.git"
@@ -15,7 +17,9 @@
   },
   "homepage": "https://github.com/VedantBang/simplecybersecurity#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
   }
 }
